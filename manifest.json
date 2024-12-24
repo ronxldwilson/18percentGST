@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "18percentGST",
+  "version": "1.0",
+  "description": "Show 18% GST on prices while shopping on Amazon.",
+  "permissions": ["scripting", "activeTab","storage"],
+  "host_permissions": ["https://www.amazon.in/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.amazon.in/*"],  
+      "js": ["content.js"]
+    }
+  ]
+}
+
